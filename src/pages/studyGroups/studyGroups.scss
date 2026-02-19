@@ -1,0 +1,179 @@
+@import "../../style.scss";
+
+.studyGroups {
+  @include themify($themes) {
+    padding: 20px;
+    background-color: themed("bgSoft");
+    min-height: 100vh;
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+
+      h1 {
+        color: themed("textColor");
+      }
+
+      .createBtn {
+        padding: 10px 20px;
+        background-color: themed("button");
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: 500;
+        transition: background-color 0.2s;
+
+        &:hover {
+          background-color: darken(themed("button"), 10%);
+        }
+      }
+    }
+
+    .searchAndFilter {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 20px;
+
+      .search {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px;
+        background-color: themed("bg");
+        border-radius: 5px;
+
+        input {
+          flex: 1;
+          border: none;
+          background: none;
+          outline: none;
+          color: themed("textColor");
+
+          &::placeholder {
+            color: themed("textColorSoft");
+          }
+        }
+
+        svg {
+          color: themed("textColorSoft");
+        }
+      }
+
+      .filter {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px;
+        background-color: themed("bg");
+        border-radius: 5px;
+
+        select {
+          border: none;
+          background: none;
+          outline: none;
+          color: themed("textColor");
+          cursor: pointer;
+        }
+
+        svg {
+          color: themed("textColorSoft");
+        }
+      }
+    }
+
+    .tabs {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 20px;
+
+      .tab {
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        color: themed("textColorSoft");
+        transition: all 0.2s;
+
+        &.active {
+          background-color: themed("button");
+          color: white;
+        }
+
+        &:hover:not(.active) {
+          background-color: themed("bg");
+        }
+      }
+    }
+
+    .groupsList {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+
+      .loading, .noGroups {
+        grid-column: 1 / -1;
+        text-align: center;
+        padding: 20px;
+        color: themed("textColorSoft");
+      }
+
+      .groupCard {
+        background-color: themed("bg");
+        border-radius: 10px;
+        padding: 20px;
+        transition: transform 0.2s;
+
+        &:hover {
+          transform: translateY(-5px);
+        }
+
+        .groupInfo {
+          display: flex;
+          gap: 15px;
+
+          .groupImg {
+            width: 80px;
+            height: 80px;
+            border-radius: 10px;
+            object-fit: cover;
+          }
+
+          .details {
+            flex: 1;
+
+            h3 {
+              color: themed("textColor");
+              margin-bottom: 5px;
+            }
+
+            p {
+              color: themed("textColorSoft");
+              font-size: 14px;
+              margin-bottom: 10px;
+            }
+
+            .meta {
+              display: flex;
+              gap: 15px;
+              color: themed("textColorSoft");
+              font-size: 12px;
+
+              span {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+
+                svg {
+                  font-size: 16px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+} 

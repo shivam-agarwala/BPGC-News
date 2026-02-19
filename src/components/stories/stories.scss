@@ -1,0 +1,115 @@
+@import "../../style.scss";
+
+.stories {
+  display: flex;
+  gap: 10px;
+  height: 250px;
+  padding: 0;
+  margin-bottom: 24px;
+  overflow-x: auto;
+  scrollbar-width: none; // Firefox
+  -ms-overflow-style: none; // IE and Edge
+  &::-webkit-scrollbar {
+    display: none; // Chrome, Safari, Opera
+  }
+
+  @include mobile {
+    height: 150px;
+    gap: 6px;
+    margin-bottom: 16px;
+  }
+
+  @include tablet{
+    height: 180px;
+    gap: 25px;
+    padding: 12px 0;
+  }
+
+  .story {
+    flex: none;
+    width: 140px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: scale(1.02);
+    }
+
+    @include mobile {
+      width: 100px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .userImg {
+      position: absolute;
+      left: 10px;
+      top: 10px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 4px solid #1876f2;
+      object-fit: cover;
+    }
+
+    span {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      right: 10px;
+      color: white;
+      font-weight: 500;
+      font-size: 14px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    &.create-story {
+      background: white;
+      border: 1px solid #e4e6eb;
+
+      .create-story-footer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: white;
+        padding: 20px 10px;
+        text-align: center;
+        font-size: 14px;
+        font-weight: 600;
+        color: #1c1e21;
+      }
+
+      button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -80%);
+        background: #1876f2;
+        border: 4px solid white;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        color: white;
+        font-size: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+ALTER TABLE posts ADD COLUMN likes INT DEFAULT 0;
+
+
+DROP TABLE likes;
+
+CREATE TABLE likes (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  userId INT NOT NULL,
+  postId INT NOT NULL,
+  FOREIGN KEY (userId) REFERENCES users(id) ON DELETE CASCADE,
+  FOREIGN KEY (postId) REFERENCES posts(id) ON DELETE CASCADE
+);
+
+
+DROP table comments;
+
+CREATE TABLE comments (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  userId INT NOT NULL,
+  postId INT NOT NULL,
+  `desc` TEXT NOT NULL, -- Use backticks to escape "desc"
+  createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (userId) REFERENCES users(id),
+  FOREIGN KEY (postId) REFERENCES posts(id)
+);
+
+
