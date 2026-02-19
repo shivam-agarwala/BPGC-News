@@ -79,7 +79,7 @@ BPGS-News/
 
 ---
 
-# ⚙️ Installation & Setup
+# Installation & Setup
 
 ## Step 1 — Download Project
 
@@ -122,7 +122,7 @@ Update the database password:
 password: "YOUR_DATABASE_PASSWORD"
 ```
 
-⚠ Important: Replace the existing password (used during development) with your own local DB password.
+Important: Replace the existing password (used during development) with your own local DB password.
 
 ---
 
@@ -195,7 +195,7 @@ ADD COLUMN likes_count INT DEFAULT 0;
 
 ---
 
-# 🛡️ Security Highlights
+# Security Highlights
 
 * JWT based authentication
 * Middleware based route protection
@@ -249,11 +249,3 @@ Runs tests.
 # Author
 
 **Shivam Agarwala**
-
----
-
-If you want, I can now:
-
-* Make this README even more impressive for recruiters
-* Add GitHub badges (build, license, tech stack)
-* Or convert this into a polished portfolio description 🔥
