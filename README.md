@@ -1,70 +1,259 @@
-# Getting Started with Create React App
+# BPGS News
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Secure Full Stack News Platform with RBAC & NLP Powered Personalization
 
-## Available Scripts
+BPGS News is a **secure full stack news platform** built with a modern React frontend and Node.js backend.
 
-In the project directory, you can run:
+The platform implements **Role Based Access Control (RBAC)**, secure authentication, protected APIs, and an **NLP powered content pipeline** for intelligent tagging and personalized news discovery.
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Key Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Secure Authentication & Authorization
 
-### `npm test`
+* Complete login flow implementation
+* Role Based Access Control (RBAC)
+* Protected routes (frontend)
+* Secure backend APIs
+* Data integrity across frontend backend stack
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+### Post Management System
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* Create posts
+* Display posts dynamically
+* Like / Unlike functionality
+* Comment system
+* Real time UI updates
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Intelligent Content Pipeline
 
-### `npm run eject`
+* NLP based auto tagging
+* Smart content categorization
+* Personalized news recommendations
+* ML driven content enhancement
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Tech Stack
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Frontend
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+* React (Create React App)
+* React Router
+* Context / State Management
+* REST API integration
 
-## Learn More
+### Backend
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+* Node.js
+* Express.js
+* MySQL
+* JWT Authentication
+* Secure Middleware
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+## 📂 Project Structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```
+BPGS-News/
+│
+├── frontend (root directory)
+│   ├── src/
+│   ├── public/
+│   └── package.json
+│
+├── backend/
+│   ├── routes/
+│   ├── controllers/
+│   ├── db.js
+│   └── package.json
+│
+└── README.md
+```
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+# ⚙️ Installation & Setup
 
-### Making a Progressive Web App
+## Step 1 — Download Project
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Unzip the project and open terminal in the **root directory**.
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Step 2 — Install Frontend Dependencies
 
-### Deployment
+In the root directory:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```bash
+npm install
+```
 
-### `npm run build` fails to minify
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Step 3 — Install Backend Dependencies
+
+Go to backend folder:
+
+```bash
+cd backend
+npm install
+```
+
+---
+
+## Step 4 — Configure Database
+
+Open:
+
+```
+backend/db.js
+```
+
+Update the database password:
+
+```js
+password: "YOUR_DATABASE_PASSWORD"
+```
+
+⚠ Important: Replace the existing password (used during development) with your own local DB password.
+
+---
+
+## Step 5 — Start Backend Server
+
+Inside backend folder:
+
+```bash
+npm run start
+```
+
+Backend should start on:
+
+```
+http://localhost:5000
+```
+
+(or whichever port configured)
+
+---
+
+## Step 6 — Start Frontend
+
+Open another terminal in root directory:
+
+```bash
+npm run start
+```
+
+Frontend runs on:
+
+```
+http://localhost:3000
+```
+
+---
+
+# 🗄️ Database Schema Changes
+
+Two tables need to be altered.
+
+Include your altered schema here (replace with your actual SQL):
+
+```sql
+ALTER TABLE users
+ADD COLUMN role VARCHAR(50) NOT NULL;
+
+ALTER TABLE posts
+ADD COLUMN tags TEXT,
+ADD COLUMN likes_count INT DEFAULT 0;
+```
+
+(Replace with your real altered schema if different.)
+
+---
+
+# Application Flow
+
+1. User registers / logs in
+2. JWT token issued
+3. Protected routes validated
+4. Role based access enforced
+5. Users can:
+
+   * Create posts
+   * Like / Unlike
+   * Comment
+6. NLP module auto tags content
+7. Personalized recommendations generated
+
+---
+
+# 🛡️ Security Highlights
+
+* JWT based authentication
+* Middleware based route protection
+* Role based access restrictions
+* Secure API design
+* Controlled content visibility
+* Backend validation checks
+
+---
+
+# Resume Ready One Line Description
+
+Developed a **secure full stack news platform with Role Based Access Control (RBAC) and an ML powered NLP content pipeline**, implementing authentication, protected routing, intelligent tagging, and personalized news recommendations across a scalable frontend backend architecture.
+
+---
+
+# Available Scripts (Frontend)
+
+In the project root:
+
+```bash
+npm start
+```
+
+Runs app in development mode.
+
+```bash
+npm run build
+```
+
+Builds production bundle.
+
+```bash
+npm test
+```
+
+Runs tests.
+
+---
+
+# Future Improvements
+
+* Real-time notifications
+* Admin moderation dashboard
+* Search engine with semantic ranking
+* Deployment (AWS / Vercel / Docker)
+* CI/CD integration
+
+---
+
+# Author
+
+**Shivam Agarwala**
+
+---
+
+If you want, I can now:
+
+* Make this README even more impressive for recruiters
+* Add GitHub badges (build, license, tech stack)
+* Or convert this into a polished portfolio description 🔥
