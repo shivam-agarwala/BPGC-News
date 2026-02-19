@@ -58,7 +58,7 @@ The platform implements **Role Based Access Control (RBAC)**, secure authenticat
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 BPGS-News/
@@ -160,7 +160,7 @@ http://localhost:3000
 
 ---
 
-# 🗄️ Database Schema Changes
+# Database Schema Changes
 
 Two tables need to be altered.
 
